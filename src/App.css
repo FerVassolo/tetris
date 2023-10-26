@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  background: #081924;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
+.game-block {
+  margin: 0;
+  padding: 0;
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid rgba(225, 140, 255, 0.20);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table{
+  border-spacing: 0px;
+}
+.game-board {
+  border: 8px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(166.01deg, #E743FD -1.2%, #779EFE 101.73%);
+
+}
+.piece-i {
+  background-color: #FEA43A;
+  border-color: #FEA43A;
+}
+.piece-j {
+  background-color: #FEEA3A;
+  border-color: #FEEA3A;
+}
+.piece-l {
+  background-color: #3AFEB7;
+  border-color: #3AFEB7;
+}
+.piece-o {
+  background-color: #FE3A3A;
+  border-color: #FE3A3A;
+}
+.piece-s {
+  background-color: #3AD0FE;
+  border-color: #3AD0FE;
+}
+.piece-t {
+  background-color: #b77c72;
+  border-color: #b77c72;
+}
+.piece-z {
+  background-color: #E743FD;
+  border-color: #E743FD;
+}
+.piece-preview {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.piece-queue > div{
+  display: flex;
+  gap: 10px;
 }
