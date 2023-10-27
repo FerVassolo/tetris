@@ -1,0 +1,33 @@
+.movement-control{
+    padding: 18px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 72px;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.upper-section, .mid-section, .bottom-section{
+    width: 108px;
+    height: 36px;
+}
+
+.upper-section, .bottom-section{
+    display: flex;
+    justify-content: center;
+}
+
+.mid-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.move-control-btn{
+    width: 36px;
+    height: 36px;
+    border: 2px solid #ddd;
+}
+
+.rounded{
+    border-radius: 24px;
+}
