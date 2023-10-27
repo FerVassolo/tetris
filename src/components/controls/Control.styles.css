@@ -1,5 +1,9 @@
+:root{
+    --btn-size: 36px;
+}
+
 .movement-control{
-    padding: 18px;
+    padding: 15px;
     border: 1px solid rgb(221, 221, 221);
     border-radius: 72px;
     width: fit-content;
@@ -8,7 +12,7 @@
 
 .upper-section, .mid-section, .bottom-section{
     width: 108px;
-    height: 36px;
+    height: var(--btn-size);
 }
 
 .upper-section, .bottom-section{
@@ -23,8 +27,8 @@
 }
 
 .move-control-btn{
-    width: 36px;
-    height: 36px;
+    width: var(--btn-size);
+    height: var(--btn-size);
     border: 2px solid #ddd;
 }
 
