@@ -3,25 +3,25 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   min-height: 100vh;
 }
 
 .game-block {
   margin: 0;
   padding: 0;
-  max-width: 1.5em;
-  max-height: 1.5em; /*Squares size*/
-  /*border: 1px solid var(--border-color);*/
+  /*width: 1.5em;
+  height: 1.5em; Squares size*/
+  border: 1px solid var(--border-color);
 }
 
 .game-board {
   border-spacing: 0px;
-  width: 300px;
-  height: 600px;
   border: 8px solid;
+  height: 60vh;
+  width: 30vh;
   border-image-slice: 1;
-  /*border-image-source: linear-gradient(166.01deg, var(--first-color-gradient) -1.2%, var(--second-color-gradient) 101.73%);*/
+  border-image-source: linear-gradient(166.01deg, var(--first-color-gradient) -1.2%, var(--second-color-gradient) 101.73%);
 }
 .piece-i {
   background-color: var(--color-i);

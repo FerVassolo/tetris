@@ -10,6 +10,9 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+.movement-control, .control-btn{
+    border: 2px solid var(--second-color-gradient);
+}
 .upper-section, .mid-section, .bottom-section{
     width: 108px;
     height: var(--btn-size);
@@ -26,10 +29,10 @@
     justify-content: space-between;
 }
 
-.move-control-btn{
+.control-btn{
     width: var(--btn-size);
     height: var(--btn-size);
-    border: 2px solid #ddd;
+    background: linear-gradient(to bottom, var(--first-color-gradient) 0%, var(--second-color-gradient)100%);
 }
 
 .rounded{
