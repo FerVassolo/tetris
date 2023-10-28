@@ -1,7 +1,14 @@
-.custom-header{
-    background: linear-gradient(90deg, #E743FD -1.2%, #779EFE 101.73%);
-    padding: 4px 16px;
-    color: #081924;
-    font-size: 18px;
-    font-weight: 400;
+.custom-header {
+  background: linear-gradient(90deg, #e743fd -1.2%, #779efe 101.73%);
+  padding: 4px 16px;
+  color: #081924;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.custom-body {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(17px);
+  color: white;
+  padding: 16px;
 }

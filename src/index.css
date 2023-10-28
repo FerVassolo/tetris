@@ -5,11 +5,12 @@
   --color-l: #3AFEB7;
   --color-o: #FE3A3A;
   --color-s: #3AD0FE;
-  --color-t: #b77c72;
+  --color-t: #4356FD;
   --color-z: #E743FD;
   --color-preview: rgba(255, 255, 255, 0.2);
   --first-color-gradient:#E743FD;
-  --second-color-gradient:#779EFE;
+  --second-color-gradient:#27DFFE;
+  --square-size:20px;
 }
 
 @font-face {

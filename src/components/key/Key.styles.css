@@ -1,0 +1,12 @@
+.key{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    width: fit-content;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.40));
+    background: var(--glass-white, linear-gradient(180deg, rgba(255, 255, 255, 0.00) 57.29%, rgba(255, 255, 255, 0.08) 100%), linear-gradient(153deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.00) 83.33%), linear-gradient(207deg, rgba(255, 255, 255, 0.13) 16.67%, rgba(255, 255, 255, 0.03) 100%));
+    box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.01), 0px -4px 6px 2px rgba(255, 255, 255, 0.10) inset;
+    backdrop-filter: blur(6px);
+    font-size: 12px;
+}
