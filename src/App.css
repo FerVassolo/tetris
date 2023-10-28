@@ -7,6 +7,11 @@ main {
   min-height: 100vh;
 }
 
+#logo{
+  width: 200px;
+  height: auto;
+}
+
 .game-block {
   margin: 0;
   padding: 0;

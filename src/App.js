@@ -4,6 +4,7 @@ import Modal from "./components/modal/Modal";
 import music from "./resources/Dont-Stop-Me-Now.mp3";
 import { useEffect, useState } from "react";
 import Control from "./components/controls/Control";
+import logo from './resources/Sirius_Logo.png'
 
 const App = () => {
   //const [startGame, setStartGame] = useState(false);
@@ -14,6 +15,7 @@ const App = () => {
 
   return (
     <main>
+      <img src={logo} id="logo"/>
       <Tetris
         keyboardControls={{
           down: "MOVE_DOWN",
