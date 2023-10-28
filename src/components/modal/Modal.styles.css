@@ -12,9 +12,12 @@
 }
 
 .modal{
-    text-align: center;
-    background-color: rgba(2, 1, 83, 0.8);
-    padding: 20px;
+    display: grid;
+    place-content: center;
+    background-color: #081924;
+    padding: 10px;
     color: white;
-
+    width: 20%;
+    height: 25%;
+    box-shadow: 0px 5px 24px -1px rgba(0,0,0,0.75);
 }
