@@ -1,12 +1,19 @@
 :root{
   --border-color: rgba(225, 140, 255, 0.20);
   --color-i: #FEA43A;
+  --border-color-i: #f6911e;
   --color-j: #FEEA3A;
+  --border-color-j: #d1c12e;
   --color-l: #3AFEB7;
+  --border-color-l: #33dc9e;
   --color-o: #FE3A3A;
+  --border-color-o: #cf3131;
   --color-s: #3AD0FE;
+  --border-color-s: #33b7df;
   --color-t: #4356FD;
+  --border-color-t: #3746cb;
   --color-z: #E743FD;
+  --border-color-z: #b635c8;
   --color-preview: rgba(255, 255, 255, 0.2);
   --first-color-gradient:#E743FD;
   --second-color-gradient:#27DFFE;

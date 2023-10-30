@@ -44,31 +44,31 @@ main {
 }
 .piece-i {
   background-color: var(--color-i);
-  border-color: var(--color-i);
+  border-color: var(--border-color-i);
 }
 .piece-j {
   background-color: var(--color-j);
-  border-color: var(--color-j);
+  border-color: var(--border-color-j);
 }
 .piece-l {
   background-color: var(--color-l);
-  border-color: var(--color-l);
+  border-color: var(--border-color-l);
 }
 .piece-o {
   background-color: var(--color-o);
-  border-color: var(--color-o);
+  border-color: var(--border-color-o);
 }
 .piece-s {
   background-color: var(--color-s);
-  border-color: var(--color-s);
+  border-color: var(--border-color-s);
 }
 .piece-t {
   background-color: var(--color-t);
-  border-color: var(--color-t);
+  border-color: var(--border-color-t);
 }
 .piece-z {
   background-color: var(--color-z);
-  border-color: var(--color-z);
+  border-color: var(--border-color-z);
 }
 .piece-preview {
   background-color: rgba(255, 255, 255, 0.2);
