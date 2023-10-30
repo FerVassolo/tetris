@@ -65,7 +65,7 @@ const App = () => {
                     </section>
                   )}
                 </div>
-                {window.innerWidth < 500 ? <ControlPanel /> : <div></div>}
+                {window.innerWidth < 500 ? <div></div> : <ControlPanel />}
               </div>
               {state === "LOST" && (
                 <Modal>
