@@ -13,6 +13,13 @@ main {
   height: auto;
 }
 
+
+.game-container {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+
 .game-block {
   /*Squares*/
   margin: 0;
@@ -21,6 +28,7 @@ main {
   height: var(--square-size);
   border: 1px solid var(--border-color);
 }
+
 
 .game-board {
   /*Board*/
@@ -89,14 +97,17 @@ main {
   width: 90%;
 }
 
-.game-container {
-  display: grid;
-  align-content: center;
-  justify-items: center;
-}
 
 @media screen and (max-width: 900px) {
   .main-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .game-block  {
+    /*Squares*/
+    width: calc(var(--square-size) * 1.3);
+    height: calc(var(--square-size) * 1.3);
   }
 }

@@ -47,28 +47,35 @@ const App = () => {
                 <div></div>
                 <div className="game-container">
                   <Gameboard />
-                  <section className="controls">
-                    <Control
-                      up={controller.flipClockwise}
-                      right={controller.moveRight}
-                      down={controller.moveDown}
-                      left={controller.moveLeft}
-                    />
-                    <Control
-                      up={controller.hardDrop}
-                      down={controller.flipCounterclockwise}
-                      left={controller.hold}
-                      right={controller.flipClockwise}
-                      roundedBtn
-                    />
-                  </section>
+                  {window.innerWidth < 500 && (
+                    <section className="controls">
+                      <Control
+                        up={controller.flipClockwise}
+                        right={controller.moveRight}
+                        down={controller.moveDown}
+                        left={controller.moveLeft}
+                      />
+                      <Control
+                        up={controller.flipCounterclockwise}
+                        down={controller.hardDrop}
+                        left={controller.hold}
+                        right={controller.flipClockwise}
+                        roundedBtn
+                      />
+                    </section>
+                  )}
                 </div>
-                <ControlPanel />
+                {window.innerWidth < 500 ? <ControlPanel /> : <div></div>}
               </div>
               {state === "LOST" && (
                 <Modal>
                   <h2>GAME OVER</h2>
-                  <button onClick={controller.restart} className="game-over-btn">New game</button>
+                  <button
+                    onClick={controller.restart}
+                    className="game-over-btn"
+                  >
+                    New game
+                  </button>
                 </Modal>
               )}
             </>
