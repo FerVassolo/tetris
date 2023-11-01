@@ -1,0 +1,18 @@
+.game-container {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+
+.controls {
+  display: flex;
+  gap: 40px;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .controls {
+    display: none;
+  }
+}

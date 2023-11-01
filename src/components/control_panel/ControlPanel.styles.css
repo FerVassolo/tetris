@@ -1,11 +1,16 @@
-.control-panel{
-    min-width: 320px;
+.control-panel {
+  min-width: 320px;
 }
 
-.key-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+.key-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1024px) {
+  .control-panel {
+    display: none;
   }
-  
+}

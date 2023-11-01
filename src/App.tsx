@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Control from "./components/controls/Control";
 import logo from "./resources/Sirius_Logo.png";
 import ControlPanel from "./components/control_panel/ControlPanel";
+import GameContainer from "components/game_container/GameContainer";
 
 const App = () => {
   //const [startGame, setStartGame] = useState(false);
@@ -45,28 +46,12 @@ const App = () => {
               <p className="points-container">{points} PTS</p>
               <div className="main-container">
                 <div></div>
-                <div className="game-container">
+                <GameContainer controller={controller}>
                   <Gameboard />
-                  {window.innerWidth < 500 && (
-                    <section className="controls">
-                      <Control
-                        up={controller.flipClockwise}
-                        right={controller.moveRight}
-                        down={controller.moveDown}
-                        left={controller.moveLeft}
-                      />
-                      <Control
-                        up={controller.flipCounterclockwise}
-                        down={controller.hardDrop}
-                        left={controller.hold}
-                        right={controller.flipClockwise}
-                        roundedBtn
-                      />
-                    </section>
-                  )}
-                </div>
-                {window.innerWidth < 500 ? <div></div> : <ControlPanel />}
+                </GameContainer>
+                <ControlPanel />
               </div>
+
               {state === "LOST" && (
                 <Modal>
                   <h2>GAME OVER</h2>

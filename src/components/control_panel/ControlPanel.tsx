@@ -1,7 +1,7 @@
-import ArrowSVG from "../../resources/ArrowSVG"
-import CustomContainer from "../custom_container/CustomContainer"
-import Key from "../key/Key"
-import './ControlPanel.styles.css'
+import ArrowSVG from "../../resources/ArrowSVG";
+import CustomContainer from "../custom_container/CustomContainer";
+import Key from "../key/Key";
+import "./ControlPanel.styles.css";
 
 const ControlPanel = () => {
   return (
@@ -40,7 +40,7 @@ const ControlPanel = () => {
         <p>Pause</p>
       </div>
     </CustomContainer>
-  )
-}
+  );
+};
 
 export default ControlPanel;
