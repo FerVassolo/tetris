@@ -1,5 +1,4 @@
 main {
-  /*background: #081924;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,11 +43,7 @@ main {
   border-spacing: 0px;
   border: 8px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(
-    166.01deg,
-    var(--first-color-gradient) -1.2%,
-    var(--second-color-gradient) 105.73%
-  );
+  border-image-source: var(--topToBottomGradient);
   backdrop-filter: blur(4px);
 }
 .piece-i {

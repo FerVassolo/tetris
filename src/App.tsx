@@ -1,20 +1,11 @@
 import Tetris from "react-tetris";
 import "./App.css";
 import Modal from "./components/modal/Modal";
-import music from "./resources/Dont-Stop-Me-Now.mp3";
-import { useEffect, useState } from "react";
-import Control from "./components/controls/Control";
 import logo from "./resources/Sirius_Logo.png";
 import ControlPanel from "./components/control_panel/ControlPanel";
 import GameContainer from "components/game_container/GameContainer";
 
 const App = () => {
-  //const [startGame, setStartGame] = useState(false);
-
-  //const play = () => {
-  //  new Audio(music).play();
-  //};
-
   return (
     <main>
       <img src={logo} id="logo" />

@@ -1,4 +1,6 @@
 :root{
+  --primary: #13F0FE;
+  --pink: #EC3FFE;
   --border-color: rgba(225, 140, 255, 0.20);
   --color-i: #FEA43A;
   --border-color-i: #f6911e;
@@ -15,8 +17,8 @@
   --color-z: #E743FD;
   --border-color-z: #b635c8;
   --color-preview: rgba(255, 255, 255, 0.2);
-  --first-color-gradient:#EC3FFE;
-  --second-color-gradient:#13F0FE;
+  --topToBottomGradient: linear-gradient(180deg, #EC3FFE 0%, #16EEFE 90%);
+  --leftToRightGradient: linear-gradient(90deg, #EA41FE 0%, #0FF2FE 100%); 
   --square-size:20px;
 }
 

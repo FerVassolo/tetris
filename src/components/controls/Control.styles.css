@@ -11,7 +11,7 @@
 }
 
 .movement-control, .control-btn{
-    border: 2px var(--second-color-gradient);
+    border: 2px var(--primary);
     border-style: groove;
 }
 .upper-section, .mid-section, .bottom-section{
@@ -33,7 +33,7 @@
 .control-btn{
     width: var(--btn-size);
     height: var(--btn-size);
-    background: linear-gradient(to bottom, var(--first-color-gradient) 0%, var(--second-color-gradient)130%);
+    background: var(--topToBottomGradient);
 }
 
 .rounded{
