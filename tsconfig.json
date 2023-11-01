@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "outDir": "./built",
+      "allowJs": true,
+      "target": "ES2022",
+      "jsx": "preserve",
+      "esModuleInterop": true,
+      "module": "commonjs",
+      "declaration": true,
+      "removeComments": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "baseUrl": "src",
+      "rootDir": "src",
+      "moduleResolution": "Node",
+      "incremental": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "strictNullChecks": true,
+      "noImplicitAny": true,
+      "forceConsistentCasingInFileNames": true,
+      "noFallthroughCasesInSwitch": true
+    },
+    "include": ["src", "src/declaration.d.ts"],
+    "exclude": ["node_modules", "*.test.ts"]
+  }
+  
