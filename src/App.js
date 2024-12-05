@@ -8,57 +8,54 @@ import logo from "./resources/Sirius_Logo.png";
 import ControlPanel from "./components/control_panel/ControlPanel";
 
 const App = () => {
-
   const [rotation, setRotation] = useState(0);
   const [controller, setController] = useState(null);
 
   const handleLogoClick = () => {
     setRotation((prevRotation) => prevRotation + 90);
   };
-  //const [startGame, setStartGame] = useState(false);
 
-  //const play = () => {
-  //  new Audio(music).play();
-  //};
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (!controller) return;
 
-  document.addEventListener("keydown", (event) => {
-    if (!controller) return;
-    switch (event.keyCode) {
-      case 37: // Flecha izquierda
-        event.preventDefault(); // Evitar scroll
-        console.log("Izquierda");
-        controller.moveLeft();
-        break;
-      case 38: // Flecha arriba
-        event.preventDefault(); // Evitar scroll
-        console.log("Rotar");
-        controller.flipClockwise()
-        break;
-      case 39: // Flecha derecha
-        event.preventDefault(); // Evitar scroll
-        console.log("Derecha");
-        controller.moveRight();
-        break;
-      case 40: // Flecha abajo
-        event.preventDefault(); // Evitar scroll
-        console.log("Abajo");
-        controller.moveDown();
-        break;
-      default:
-        break;
-    }
-  });
+      // Mapeo de códigos de teclas del control remoto y teclas estándar
+      const keyActions = {
+        37: () => controller.moveLeft(), // Flecha izquierda
+        38: () => controller.flipClockwise(), // Flecha arriba
+        39: () => controller.moveRight(), // Flecha derecha
+        40: () => controller.moveDown(), // Flecha abajo
+        13: () => controller.hardDrop(), // Tecla Enter/OK
+        10009: () => console.log("Botón Back presionado"), // Botón Back (para TVs)
+      };
 
+      if (keyActions[event.keyCode]) {
+        event.preventDefault();
+        keyActions[event.keyCode]();
+      }
+    };
+
+    // Escuchar eventos de teclas
+    window.addEventListener("keydown", handleKeyDown);
+
+    // Limpiar listener al desmontar componente
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [controller]);
 
   return (
-    <main style={{
-      transform: `rotate(${rotation}deg)`, // Aplicar transformación
-      transition: "transform 0.3s ease-in-out", // Animación suave
-    }}>
+    <main
+      style={{
+        transform: `rotate(${rotation}deg)`,
+        transition: "transform 0.3s ease-in-out",
+      }}
+    >
       <img
         src={logo}
         id="logo"
-        onClick={handleLogoClick} // Manejar el clic
+        onClick={handleLogoClick}
+        alt="Logo Sirius"
       />
       <Tetris
         keyboardControls={{
@@ -90,7 +87,7 @@ const App = () => {
               <div className="main-container">
                 <div></div>
                 <div className="game-container">
-                  <Gameboard/>
+                  <Gameboard />
                   {window.innerWidth < 500 && (
                     <section className="controls">
                       <Control
@@ -109,7 +106,7 @@ const App = () => {
                     </section>
                   )}
                 </div>
-                {window.innerWidth < 500 ? <div></div> : <ControlPanel/>}
+                {window.innerWidth < 500 ? <div></div> : <ControlPanel />}
               </div>
               {state === "LOST" && (
                 <Modal>
