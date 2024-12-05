@@ -8,6 +8,12 @@ import logo from "./resources/Sirius_Logo.png";
 import ControlPanel from "./components/control_panel/ControlPanel";
 
 const App = () => {
+
+  const [rotation, setRotation] = useState(0);
+
+  const handleLogoClick = () => {
+    setRotation((prevRotation) => prevRotation + 90);
+  };
   //const [startGame, setStartGame] = useState(false);
 
   //const play = () => {
@@ -15,8 +21,15 @@ const App = () => {
   //};
 
   return (
-    <main>
-      <img src={logo} id="logo" />
+    <main style={{
+      transform: `rotate(${rotation}deg)`, // Aplicar transformación
+      transition: "transform 0.3s ease-in-out", // Animación suave
+    }}>
+      <img
+        src={logo}
+        id="logo"
+        onClick={handleLogoClick} // Manejar el clic
+      />
       <Tetris
         keyboardControls={{
           down: "MOVE_DOWN",
@@ -32,21 +45,21 @@ const App = () => {
         }}
       >
         {({
-          HeldPiece,
-          Gameboard,
-          PieceQueue,
-          points,
-          linesCleared,
-          state,
-          controller,
-        }) => {
+            HeldPiece,
+            Gameboard,
+            PieceQueue,
+            points,
+            linesCleared,
+            state,
+            controller,
+          }) => {
           return (
             <>
               <p className="points-container">{points} PTS</p>
               <div className="main-container">
                 <div></div>
                 <div className="game-container">
-                  <Gameboard />
+                  <Gameboard/>
                   {window.innerWidth < 500 && (
                     <section className="controls">
                       <Control
@@ -65,7 +78,7 @@ const App = () => {
                     </section>
                   )}
                 </div>
-                {window.innerWidth < 500 ? <div></div> : <ControlPanel />}
+                {window.innerWidth < 500 ? <div></div> : <ControlPanel/>}
               </div>
               {state === "LOST" && (
                 <Modal>
