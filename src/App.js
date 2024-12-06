@@ -50,7 +50,7 @@ const App = () => {
       LEFT: () => controller.moveLeft(),
       RIGHT: () => controller.moveRight(),
       DOWN: () => controller.flipClockwise(),
-      UP: () => controller.moveDown(),
+      // UP: () => controller.moveDown(),
       DBLCLICK: () => handleReset(),
       CLICK: () => controller.hardDrop(),
     };
