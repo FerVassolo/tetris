@@ -2,62 +2,83 @@ import Tetris from "react-tetris";
 import "./App.css";
 import Modal from "./components/modal/Modal";
 import music from "./resources/Dont-Stop-Me-Now.mp3";
-import { useEffect, useState } from "react";
+import {useEffect, useRef, useState} from "react";
 import Control from "./components/controls/Control";
 import logo from "./resources/Sirius_Logo.png";
 import ControlPanel from "./components/control_panel/ControlPanel";
 
 const App = () => {
-  const [rotation, setRotation] = useState(0);
   const [controller, setController] = useState(null);
-
-  const handleLogoClick = () => {
-    setRotation((prevRotation) => prevRotation + 90);
-  };
+  const gameStateRef = useRef(""); // Referencia para el estado del juego
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (!controller) return;
+    const handleMouseMove = (event) => handleMove(event);
+    const handleMouseClick = () => handleKeyDown("CLICK");
+    const handleMouseDblClick = () => handleKeyDown("DBLCLICK");
 
-      // Mapeo de códigos de teclas del control remoto y teclas estándar
-      const keyActions = {
-        37: () => controller.moveLeft(), // Flecha izquierda
-        38: () => controller.flipClockwise(), // Flecha arriba
-        39: () => controller.moveRight(), // Flecha derecha
-        40: () => controller.moveDown(), // Flecha abajo
-        13: () => controller.hardDrop(), // Tecla Enter/OK
-        10009: () => console.log("Botón Back presionado"), // Botón Back (para TVs)
-      };
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("click", handleMouseClick);
+    document.addEventListener("dblclick", handleMouseDblClick);
 
-      if (keyActions[event.keyCode]) {
-        event.preventDefault();
-        keyActions[event.keyCode]();
-      }
-    };
-
-    // Escuchar eventos de teclas
-    window.addEventListener("keydown", handleKeyDown);
-
-    // Limpiar listener al desmontar componente
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("click", handleMouseClick);
+      document.removeEventListener("dblclick", handleMouseDblClick);
     };
   }, [controller]);
 
+
+  const handleMove = (event) => {
+    const { movementX, movementY } = event;
+
+    let direction = '';
+    if (movementX > 0) direction = 'RIGHT';
+    if (movementX < 0) direction = 'LEFT';
+    if (movementY > 0) direction = 'DOWN';
+    if (movementY < 0) direction = 'UP';
+
+    if (direction) {
+      handleKeyDown(direction);
+    }
+  }
+
+
+  const handleKeyDown = (direction) => {
+    if (!controller) return;
+
+    const keyActions = {
+      LEFT: () => controller.moveLeft(),
+      RIGHT: () => controller.moveRight(),
+      DOWN: () => controller.flipClockwise(),
+      UP: () => controller.moveDown(),
+      DBLCLICK: () => handleReset(),
+      CLICK: () => controller.hardDrop(),
+    };
+
+    if (keyActions[direction]) {
+      keyActions[direction]();
+    }
+  };
+
+  const handleReset = () => {
+    if (gameStateRef.current === "LOST" && controller) {
+      controller.restart();
+    } else {
+      console.log("El juego no está en estado 'isLost', no se reinicia.");
+    }
+  };
+
+
+
   return (
-    <main
-      style={{
-        transform: `rotate(${rotation}deg)`,
-        transition: "transform 0.3s ease-in-out",
-      }}
-    >
+    <main>
       <img
         src={logo}
         id="logo"
-        onClick={handleLogoClick}
         alt="Logo Sirius"
       />
       <Tetris
+        style={{}}
         keyboardControls={{
           down: "MOVE_DOWN",
           left: "MOVE_LEFT",
@@ -80,7 +101,9 @@ const App = () => {
             state,
             controller,
           }) => {
+          gameStateRef.current = state;
           setController(controller);
+
           return (
             <>
               <p className="points-container">{points} PTS</p>
@@ -88,29 +111,30 @@ const App = () => {
                 <div></div>
                 <div className="game-container">
                   <Gameboard />
-                  {window.innerWidth < 500 && (
-                    <section className="controls">
-                      <Control
-                        up={controller.flipClockwise}
-                        right={controller.moveRight}
-                        down={controller.moveDown}
-                        left={controller.moveLeft}
-                      />
-                      <Control
-                        up={controller.flipCounterclockwise}
-                        down={controller.hardDrop}
-                        left={controller.hold}
-                        right={controller.flipClockwise}
-                        roundedBtn
-                      />
-                    </section>
-                  )}
+                  {/*{window.innerWidth < 500 && (*/}
+                  {/*  <section className="controls">*/}
+                  {/*    <Control*/}
+                  {/*      up={controller.flipClockwise}*/}
+                  {/*      right={controller.moveRight}*/}
+                  {/*      down={controller.moveDown}*/}
+                  {/*      left={controller.moveLeft}*/}
+                  {/*    />*/}
+                  {/*    <Control*/}
+                  {/*      up={controller.flipCounterclockwise}*/}
+                  {/*      down={controller.hardDrop}*/}
+                  {/*      left={controller.hold}*/}
+                  {/*      right={controller.flipClockwise}*/}
+                  {/*      roundedBtn*/}
+                  {/*    />*/}
+                  {/*  </section>*/}
+                  {/*)}*/}
                 </div>
-                {window.innerWidth < 500 ? <div></div> : <ControlPanel />}
+                {/*{window.innerWidth < 500 ? <div></div> : <ControlPanel />}*/}
               </div>
-              {state === "LOST" && (
+              {gameStateRef.current === "LOST" && (
                 <Modal>
                   <h2>GAME OVER</h2>
+
                   <button
                     onClick={controller.restart}
                     className="game-over-btn"

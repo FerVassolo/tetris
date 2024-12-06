@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 main {
   /*background: #081924;*/
   display: flex;
@@ -6,6 +10,14 @@ main {
   justify-content: space-evenly;
   min-height: 100vh;
   padding: 10px;
+  /*height: 100%;*/
+  /*width: 100%;*/
+  cursor: none;
+  transform: rotate(270deg) scale(1.5);;
+  /*transform-origin: top left;*/
+  width: 100%;  /* Set the height as width to avoid overflow */
+  height: 100%; /* Set the width as height */
+  overflow: hidden; /* Hide any content overflow */
 }
 
 #logo {
