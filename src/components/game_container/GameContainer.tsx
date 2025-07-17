@@ -1,4 +1,4 @@
-import Control from "components/controls/Control";
+import Control from "../controls/Control";
 import "./GameContainer.styles.css";
 import { Controller } from "react-tetris";
 
