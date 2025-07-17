@@ -1,0 +1,113 @@
+#logo {
+  width: 200px;
+  height: auto;
+}
+
+.points-container {
+  font-weight: 400;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
+.game-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.controls-tooltip-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-right: 24px;
+}
+
+.icon-tooltip-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-icon {
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.help-icon:hover {
+  color: #00bfff;
+}
+
+.controls-tooltip {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 220px;
+  max-width: 350px;
+  background-color: #222;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 12px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  box-sizing: border-box;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.icon-tooltip-wrapper:hover .controls-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.piece-i {
+  background-color: var(--color-i);
+  border-color: var(--border-color-i);
+}
+.piece-j {
+  background-color: var(--color-j);
+  border-color: var(--border-color-j);
+}
+.piece-l {
+  background-color: var(--color-l);
+  border-color: var(--border-color-l);
+}
+.piece-o {
+  background-color: var(--color-o);
+  border-color: var(--border-color-o);
+}
+.piece-s {
+  background-color: var(--color-s);
+  border-color: var(--border-color-s);
+}
+.piece-t {
+  background-color: var(--color-t);
+  border-color: var(--border-color-t);
+}
+.piece-z {
+  background-color: var(--color-z);
+  border-color: var(--border-color-z);
+}
+.piece-preview {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.score-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+} 

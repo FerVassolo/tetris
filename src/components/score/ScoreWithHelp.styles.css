@@ -1,0 +1,79 @@
+.score-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.points-container {
+  font-weight: 400;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
+.controls-tooltip-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-right: 0;
+}
+
+.icon-tooltip-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-icon {
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.help-icon:hover {
+  color: #00bfff;
+}
+
+.controls-tooltip {
+  position: absolute;
+  left: 0;
+  top: 36px;
+  transform: none;
+  min-width: 220px;
+  max-width: 350px;
+  background-color: #222;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 12px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  box-sizing: border-box;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.controls-tooltip.visible {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.help-icon-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
