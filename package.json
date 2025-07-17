@@ -2,7 +2,11 @@
   "name": "@fervassolo/tetris",
   "version": "0.1.0",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@FerVassolo"
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FerVassolo/tetris.git"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
